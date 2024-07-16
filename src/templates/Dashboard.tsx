@@ -16,10 +16,27 @@ const Dashboard = () => {
     setSearchTerm(term);
   };
 
+  // Funcion para reemplazar los acentos
+  function quitarAcentos(cadena: string): string {
+    const acentos = 'áéíóúÁÉÍÓÚ';
+    const sinAcentos = 'aeiouAEIOU';
+
+    for (let i = 0; i < acentos.length; i++) {
+      cadena = cadena.replace(
+        new RegExp(acentos.charAt(i), 'g'),
+        sinAcentos.charAt(i)
+      );
+    }
+
+    return cadena;
+  }
+
   const displayedCategories = filteredCategories.map((category) => ({
     ...category,
     products: category.products.filter((product) =>
-      product.title.toLowerCase().includes(searchTerm.toLowerCase())
+      quitarAcentos(product.title.toLowerCase()).includes(
+        quitarAcentos(searchTerm.toLowerCase())
+      )
     ),
   }));
 
