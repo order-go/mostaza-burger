@@ -1,5 +1,5 @@
-import type { IconType } from "react-icons";
-import { FaInstagram, FaWhatsapp } from "react-icons/fa";
+import type { IconType } from 'react-icons';
+import { FaInstagram, FaWhatsapp } from 'react-icons/fa';
 
 export interface Product {
   id: number;
@@ -33,184 +33,184 @@ const data: {
   categories: [
     {
       id: 1,
-      name: "Perros Calientes",
+      name: 'Perros Calientes',
       products: [
         {
           id: 1,
-          title: "Perro Normal",
+          title: 'Perro Normal',
           price: 0.99,
           images: [
-            "/Perros/2PerrosAsquerocitos.jfif",
-            "/Perros/2PerrosCalientes.jfif",
-            "/Perros/PerroCaliente.jfif",
+            '/Perros/2PerrosAsquerocitos.jfif',
+            '/Perros/2PerrosCalientes.jfif',
+            '/mostaza-burger/Perros/PerroCaliente.jfif',
           ],
           description:
-            "Clasico perro caliente disponible con: ensalada rayada, papas cabello de angel, salchicha alemana, salsas al gusto.",
+            'Clasico perro caliente disponible con: ensalada rayada, papas cabello de angel, salchicha alemana, salsas al gusto.',
         },
         {
           id: 2,
-          title: "Perros Americanos",
+          title: 'Perros Americanos',
           price: 1.49,
-          images: ["/Perros/combodog.jpg"],
+          images: ['/Perros/combodog.jpg'],
           description:
-            "Perros americanos tradicionales salchica americana salsa blanca y salsa roja.",
+            'Perros americanos tradicionales salchica americana salsa blanca y salsa roja.',
         },
       ],
     },
     {
       id: 2,
-      name: "Hamburguesas",
+      name: 'Hamburguesas',
       products: [
         {
           id: 1,
-          title: "Hamburguesa Normal",
+          title: 'Hamburguesa Normal',
           price: 1.99,
           images: [
-            "/burger/RompeDietaBurger.jfif",
-            "/burger/RompeDietaBurger.jfif",
+            '/burger/RompeDietaBurger.jfif',
+            '/burger/RompeDietaBurger.jfif',
           ],
           description:
-            "Hamburguesa clasica frescos ingredientes como: lechuga, tomate, cebolla, papas fritas, carne, salsas al gusto.",
+            'Hamburguesa clasica frescos ingredientes como: lechuga, tomate, cebolla, papas fritas, carne, salsas al gusto.',
         },
         {
           id: 2,
-          title: "Burguer Comb",
+          title: 'Burguer Comb',
           price: 4.99,
-          images: ["/burger/BurgerComb.jpg"],
+          images: ['/burger/BurgerComb.jpg'],
           description:
-            "Doble hamburguesa con racion de papas cuenta con Lechuga tomate cebolla pepinillos y carne de res.",
+            'Doble hamburguesa con racion de papas cuenta con Lechuga tomate cebolla pepinillos y carne de res.',
         },
         {
           id: 3,
-          title: "Burger Papas",
+          title: 'Burger Papas',
           price: 1.99,
-          images: ["/burger/burgerpapas.jpg"],
+          images: ['/burger/burgerpapas.jpg'],
           description:
-            "Extraña combinacion entre el morbido queso fundido y la carne acompañada de deliciosas papas fritas perfecta para cualquier antojo.",
+            'Extraña combinacion entre el morbido queso fundido y la carne acompañada de deliciosas papas fritas perfecta para cualquier antojo.',
         },
         {
           id: 4,
-          title: "Burger Express",
+          title: 'Burger Express',
           price: 3.99,
-          images: ["/burger/rompehuesos.jpg"],
+          images: ['/burger/rompehuesos.jpg'],
           description:
-            "Hamburguesa express cuenta con doble carne racion de papas tomate lechuga aros de cebolla y todo el contorno extra en queso y salsas",
+            'Hamburguesa express cuenta con doble carne racion de papas tomate lechuga aros de cebolla y todo el contorno extra en queso y salsas',
         },
       ],
     },
     {
       id: 3,
-      name: "Pepitos",
+      name: 'Pepitos',
       products: [
         {
           id: 1,
-          title: "Pepito Carne",
+          title: 'Pepito Carne',
           price: 7.99,
           images: [
-            "/pepito/PepitoFullEquipo.jfif",
-            "/pepito/PepitoPeligro.jfif",
+            '/pepito/PepitoFullEquipo.jfif',
+            '/pepito/PepitoPeligro.jfif',
           ],
           description:
-            "Un tradicional pepito callejero de carne con: tomate, lechuga, papas cabello de angel, queso amarillo, cebolla, jamon, salsas al gusto.",
+            'Un tradicional pepito callejero de carne con: tomate, lechuga, papas cabello de angel, queso amarillo, cebolla, jamon, salsas al gusto.',
         },
       ],
     },
     {
       id: 4,
-      name: "salchipapas",
+      name: 'salchipapas',
       products: [
         {
           id: 1,
-          title: "Salchipapas",
+          title: 'Salchipapas',
           price: 4.99,
           images: [
-            "/salchipapa/salchipapas.jpg",
-            "/salchipapa/salchipapas2.jpg",
+            '/salchipapa/salchipapas.jpg',
+            '/salchipapa/salchipapas2.jpg',
           ],
           description:
-            "Combo de salchicas picadas papas fritas combinadas con salsas al gusto, queso amarillo, jamon y tocineta.",
+            'Combo de salchicas picadas papas fritas combinadas con salsas al gusto, queso amarillo, jamon y tocineta.',
         },
       ],
     },
     {
       id: 5,
-      name: "combos",
+      name: 'combos',
       products: [
         {
           id: 1,
-          title: "Combo 2 personas",
+          title: 'Combo 2 personas',
           price: 4.99,
-          images: ["/combos/combofamiliar.jpg"],
+          images: ['/combos/combofamiliar.jpg'],
           description:
-            "Combo para dos personas dos perros calientes, 2 racion de pollo y papas fritas mas 2 jugos naturales.",
+            'Combo para dos personas dos perros calientes, 2 racion de pollo y papas fritas mas 2 jugos naturales.',
         },
         {
           id: 2,
-          title: "Papas fritas",
+          title: 'Papas fritas',
           price: 2.99,
-          images: ["/combos/papasfritas.jpg"],
+          images: ['/combos/papasfritas.jpg'],
           description:
-            "Racion extensa de papas fritas con salsa tartara para abrir el apetito.",
+            'Racion extensa de papas fritas con salsa tartara para abrir el apetito.',
         },
       ],
     },
     {
       id: 6,
-      name: "Bebidas",
+      name: 'Bebidas',
       products: [
         {
           id: 1,
-          title: "Coca Cola 1Lts",
+          title: 'Coca Cola 1Lts',
           price: 0.99,
           images: [
-            "/bebidas/CocaCola.jfif",
-            "/bebidas/Coca-Cola2.jfif",
-            "/bebidas/Coca-Cola3.jfif",
+            '/bebidas/CocaCola.jfif',
+            '/bebidas/Coca-Cola2.jfif',
+            '/bebidas/Coca-Cola3.jfif',
           ],
           description:
-            "Bebida Coca-Cola de 1Lt perfecta para acompañar tus pedidos en pareja.",
+            'Bebida Coca-Cola de 1Lt perfecta para acompañar tus pedidos en pareja.',
         },
         {
           id: 2,
-          title: "Vaso Coca Cola",
+          title: 'Vaso Coca Cola',
           price: 0.5,
-          images: ["/bebidas/basoCoca.jpg", "/bebidas/Coca-Cola2.jfif"],
+          images: ['/bebidas/basoCoca.jpg', '/bebidas/Coca-Cola2.jfif'],
           description:
-            "Bebida Coca-Cola  perfecta para acompañar tus pedidos individuales.",
+            'Bebida Coca-Cola  perfecta para acompañar tus pedidos individuales.',
         },
         {
           id: 3,
-          title: "Batido de cambur",
+          title: 'Batido de cambur',
           price: 0.99,
-          images: ["/bebidas/batidocambur.jpg"],
-          description: "Delicioso batido de cambur muy nutritivo y natural.",
+          images: ['/bebidas/batidocambur.jpg'],
+          description: 'Delicioso batido de cambur muy nutritivo y natural.',
         },
         {
           id: 4,
-          title: "Batido de naranja",
+          title: 'Batido de naranja',
           price: 0.99,
-          images: ["/bebidas/batidosabroso.jpg"],
+          images: ['/bebidas/batidosabroso.jpg'],
           description:
-            "Jugo de naranja para los amantes del citrico, altos valores de vitamina C.",
+            'Jugo de naranja para los amantes del citrico, altos valores de vitamina C.',
         },
       ],
     },
   ],
   paydates: {
-    bank: "Venezuela",
-    code: "0102",
-    cedula: "24685881",
-    phone: "04124676968",
+    bank: 'Venezuela',
+    code: '0102',
+    cedula: '24685881',
+    phone: '04124676968',
   },
   contactData: [
     {
-      name: "Mostaza Burger",
-      link: "https://www.instagram.com/mostazaburger",
+      name: 'Mostaza Burger',
+      link: 'https://www.instagram.com/mostazaburger',
       icon: FaInstagram,
     },
     {
-      name: "WhatsApp Burger",
-      link: "https://wa.me/4124676968",
+      name: 'WhatsApp Burger',
+      link: 'https://wa.me/4124676968',
       icon: FaWhatsapp,
     },
   ],
