@@ -81,7 +81,7 @@ const CartSidebar=({isOpen,onClose}: {isOpen: boolean; onClose: () => void;}) =>
                     </ul>
                     <CartTotal total={total} />
                     <CartCommentsComponent comment={comment} setComment={setComment} />
-                    <Button onClick={handlePaymentClick} label={'Pagar'} />
+                    <Button color="w-full text-lg " onClick={handlePaymentClick} label={'Generar pedido'} />
                 </div>
             </div>
             {isModalOpen&&<PaymentModal total={total} onConfirm={handleConfirm} onClose={(): void => setIsModalOpen(false)} />}
