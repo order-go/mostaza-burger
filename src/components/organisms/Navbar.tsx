@@ -13,6 +13,7 @@ const Navbar = () => {
   const { cartItems } = useCart();
 
   const handleIconBurgerClick: () => void = (): void => {
+    console.log(isCartOpen);
     setIsCartOpen(!isCartOpen);
   };
 
