@@ -32,10 +32,10 @@ const PaymentModal: React.FC<PaymentModalProps>=({total,onConfirm,onClose}: Paym
                     <h2 className="text-xl font-bold mb-4">Información de Pago</h2>
                     <IoMdCopy className='mb-4 w-6 h-6 cursor-pointer active:text-brown' onClick={handleCopy} />
                 </div>
-                <InfoRow label={data.paydates.bank} value={bank} />
-                <InfoRow label={data.paydates.code} value={code} />
-                <InfoRow label={data.paydates.cedula} value={cedula} />
-                <InfoRow label={data.paydates.phone} value={phone} />
+                <InfoRow label="Banco" value={bank} />
+                <InfoRow label="Codigo" value={code} />
+                <InfoRow label="Cedula" value={cedula} />
+                <InfoRow label="Telefono" value={phone} />
                 <InfoRow label="Monto" value={`$${total.toFixed(2)}`} />
                 <input
                     type="text"

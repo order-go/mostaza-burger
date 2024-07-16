@@ -1,23 +1,23 @@
 // Navbar.tsx
 
-import { useState } from 'react';
+import {useState} from 'react';
 import CartSidebar from './CartSideBar';
-import { useCart } from '../../hooks/useCart';
+import {useCart} from '../../hooks/useCart';
 import IconBurger from '../atoms/IconBurger';
 import Title from '../atoms/common/Title';
 import MenuNavbar from '../molecules/NavbarMenu';
 
-const Navbar = () => {
-  const [isCartOpen, setIsCartOpen] = useState(false);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { cartItems } = useCart();
+const Navbar=() => {
+  const [isCartOpen,setIsCartOpen]=useState(false);
+  const [isMenuOpen,setIsMenuOpen]=useState(false);
+  const {cartItems}=useCart();
 
-  const handleIconBurgerClick: () => void = (): void => {
+  const handleIconBurgerClick: () => void=(): void => {
     console.log(isCartOpen);
     setIsCartOpen(!isCartOpen);
   };
 
-  const handleNavbarMenuClick: () => void = (): void => {
+  const handleNavbarMenuClick: () => void=(): void => {
     setIsMenuOpen(!isMenuOpen);
   };
 
