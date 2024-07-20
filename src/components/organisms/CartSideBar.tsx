@@ -22,7 +22,7 @@ const CartSidebar=({isOpen,onClose}: {isOpen: boolean; onClose: () => void;}) =>
     );
 
     useEffect((): () => void => {
-        const handleClickOutside=(event: MouseEvent): void => {
+        const handleClickOutside: (event: MouseEvent) => void=(event: MouseEvent): void => {
             if(sidebarRef.current&&!sidebarRef.current.contains(event.target as Node)) {
                 onClose();
             }
@@ -70,7 +70,7 @@ const CartSidebar=({isOpen,onClose}: {isOpen: boolean; onClose: () => void;}) =>
 
     return (
         <>
-            <div ref={sidebarRef} className={`fixed z-40 top-10 right-0 h-auto w-80 border-2 border-t-0 rounded-lg rounded-t-none border-brown text-gray-300 bg-[#000000] shadow-lg transition-transform transform ${isOpen? 'translate-x-0':'translate-x-full'}`}>
+            <div ref={sidebarRef} className={`fixed z-40 top-10 right-0 h-auto w-80 border-2 border-t-0 rounded-lg rounded-t-none border-primary text-gray-300 bg-[#000000] shadow-lg transition-transform transform ${isOpen? 'translate-x-0':'translate-x-full'}`}>
                 <CloseCartIcon onClick={onClose} />
                 <div className="p-4 pt-0">
                     <h2 className="text-xl font-bold mb-4">Cesta de pedido</h2>

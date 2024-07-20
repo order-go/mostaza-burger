@@ -4,16 +4,16 @@ export default {
   theme: {
     extend: {
       colors: {
-        red: {
+        fourth: {
           DEFAULT: "#FF5733",
         },
-        yellow: {
+        tertiary: {
           DEFAULT: "#FFD700",
         },
-        green: {
+        secundary: {
           DEFAULT: "#7FFF00",
         },
-        brown: {
+        primary: {
           DEFAULT: "#8B4513",
         },
       },

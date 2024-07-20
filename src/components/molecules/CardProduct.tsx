@@ -10,7 +10,7 @@ import TitleProduct from "../atoms/common/Title";
 
 const ProductDetail=({product,onAddToCart}: {product: Product,onAddToCart: () => void}) => {
     return (
-        <div className="flex flex-col justify-between items-center w-72 h-auto p-5 border-2 border-brown text-white rounded-lg">
+        <div className="flex flex-col justify-between items-center w-72 h-auto p-5 border-2 border-primary text-white rounded-lg">
             <div>
                 <div className='flex flex-row justify-between items-center mb-4'>
                     <TitleProduct title={product.title} />
