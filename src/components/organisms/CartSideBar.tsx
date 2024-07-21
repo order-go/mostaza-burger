@@ -43,7 +43,7 @@ const CartSidebar=({isOpen,onClose}: {isOpen: boolean; onClose: () => void;}) =>
         const orderSummary: string=cartItems.map(item => `${item.quantity} ${item.product.title}`).join(', ');
         const orderInfo={
             orderSummary,
-            monto: total.toFixed(2),  // Guardar el monto sin el símbolo de dólar
+            monto: total.toFixed(2),
             comment
         };
         localStorage.setItem('cartInfo',JSON.stringify(orderInfo));
@@ -60,11 +60,11 @@ const CartSidebar=({isOpen,onClose}: {isOpen: boolean; onClose: () => void;}) =>
         setTimeout((): void => {
             const cartInfo=JSON.parse(localStorage.getItem('cartInfo')!);
             const phoneNumber="584124676968";
-            const message=`Hola, me gustaría realizar el pago del pedido.\n\nDetalles del pedido:\n${cartInfo.orderSummary}\nMonto: $${parseFloat(cartInfo.monto).toFixed(2)}\nComentario: ${cartInfo.comment}\nReferencia: ${referenceNumber}`;
+            const message=`Hola Mostaza Burger, aqui dejo mi pedido y referencia, quedo atento.\n\nDetalles del pedido:\n${cartInfo.orderSummary}\nMonto: $${parseFloat(cartInfo.monto).toFixed(2)}\nComentario: ${cartInfo.comment}\nReferencia: ${referenceNumber}`;
             const whatsappLink=`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
             window.open(whatsappLink,'_blank');
-            localStorage.removeItem('cartInfo');  // Borrar el pedido de localStorage
+            localStorage.removeItem('cartInfo');
         },5000);
     };
 
@@ -74,7 +74,7 @@ const CartSidebar=({isOpen,onClose}: {isOpen: boolean; onClose: () => void;}) =>
                 <CloseCartIcon onClick={onClose} />
                 <div className="p-4 pt-0">
                     <h2 className="text-xl font-bold mb-4">Cesta de pedido</h2>
-                    <ul>
+                    <ul className='overflow-y-auto max-h-60'>
                         {cartItems.map(item => (
                             <CartItem key={item.product.id} item={item} updateQuantity={updateQuantity} removeFromCart={removeFromCart} />
                         ))}
