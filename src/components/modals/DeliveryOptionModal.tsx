@@ -31,17 +31,15 @@ const DeliveryOptionModal=({setDeliveryFee,setDeliveryLocation,isOpen,onClose}: 
 
     return (
         <>
-            <div className="fixed inset-0 flex items-center justify-center  z-50">
+            <div className="fixed inset-0 flex items-center justify-center z-50">
                 <div className="bg-black border-2 border-primary rounded-lg p-6 w-72 shadow-lg">
                     <label className="flex flex-col space-y-2">
-                        <h2 className="text-xl font-bold mb-4 text-gray-300">Seleccione la region</h2>
-
+                        <h2 className="text-xl font-bold mb-4 text-gray-300">Seleccione la región</h2>
                         <select
                             value={selectedDelivery}
                             onChange={handleDeliveryChange}
                             className="form-select mt-1 block w-full outline-none bg-black text-fourth border-primary border-2 shadow-sm focus:ring-opacity-50"
                         >
-                            <option className='bg-black  text-fourth' disabled>Ninguno</option>
                             {data.deliveryOptions.map((option: DeliveryOptions,index: number) => (
                                 <option key={index} value={option.name}>
                                     {option.name} (${option.fee.toFixed(2)})

@@ -10,6 +10,7 @@ import {useCart} from '../../hooks/useCart';
 import data from '../../constant/data';
 import DeliveryOptionModal from '../modals/DeliveryOptionModal';
 import ButtonDelivery from '../atoms/common/ButtonDelivery';
+import {TbBasketCancel} from 'react-icons/tb';
 
 const CartSidebar=({isOpen,onClose}: {isOpen: boolean; onClose: () => void;}) => {
     const {cartItems,updateQuantity,removeFromCart}=useCart();
@@ -78,19 +79,36 @@ const CartSidebar=({isOpen,onClose}: {isOpen: boolean; onClose: () => void;}) =>
         },5000);
     };
 
+    const handleRemoveDelivery=() => {
+        setDeliveryFee(0);
+        setDeliveryLocation('');
+    };
+
     return (
         <>
             <div ref={sidebarRef} className={`fixed z-40 top-10 right-0 h-auto w-80 border-2 border-t-0 rounded-lg rounded-t-none border-primary text-gray-300 bg-[#000000] shadow-lg transition-transform transform ${isOpen? 'translate-x-0':'translate-x-full'}`}>
-                <div className='flex flex-row justify-between items-center p-4'>
-                    <ButtonDelivery onClick={(): void => setIsDeliveryOptionOpen(true)} />
+                <div className='flex flex-row justify-between items-center p-4 absolute right-0'>
                     <CloseCartIcon onClick={onClose} />
                 </div>
-                <div className="p-4 pt-0">
+                <div className="pt-2 pl-4">
+                    <ButtonDelivery color="w-full text-lg mt-2" onClick={(): void => setIsDeliveryOptionOpen(true)} label={'Cambiar servicio de delivery'} />
+                </div>
+                <div className="p-4 pt-4">
                     <h2 className="text-xl font-bold mb-4">Cesta de pedido</h2>
                     <ul className='overflow-y-auto max-h-60'>
                         {cartItems.map(item => (
                             <CartItem key={item.product.id} item={item} updateQuantity={updateQuantity} removeFromCart={removeFromCart} />
                         ))}
+                        {deliveryLocation&&(
+                            <li className='flex flex-row justify-between items-center'>
+                                <div>
+
+                                    <p className="font-semibold">{deliveryLocation}</p>
+                                    <span>$ {deliveryFee.toFixed(2)}</span>
+                                </div>
+                                <button onClick={handleRemoveDelivery} className="text-red-500 hover:underline"><TbBasketCancel className='h-5 w-5' /></button>
+                            </li>
+                        )}
                     </ul>
                     <CartTotal total={total} />
                     <CartCommentsComponent comment={comment} setComment={setComment} />
