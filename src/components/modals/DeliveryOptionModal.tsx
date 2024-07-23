@@ -40,6 +40,7 @@ const DeliveryOptionModal=({setDeliveryFee,setDeliveryLocation,isOpen,onClose}: 
                             onChange={handleDeliveryChange}
                             className="form-select mt-1 block w-full outline-none bg-black text-fourth border-primary border-2 shadow-sm focus:ring-opacity-50"
                         >
+                            <option className='text-fourth' value=''>Ninguno</option>
                             {data.deliveryOptions.map((option: DeliveryOptions,index: number) => (
                                 <option key={index} value={option.name}>
                                     {option.name} (${option.fee.toFixed(2)})

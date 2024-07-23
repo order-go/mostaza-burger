@@ -102,11 +102,10 @@ const CartSidebar=({isOpen,onClose}: {isOpen: boolean; onClose: () => void;}) =>
                         {deliveryLocation&&(
                             <li className='flex flex-row justify-between items-center'>
                                 <div>
-
-                                    <p className="font-semibold">{deliveryLocation}</p>
+                                    <p className="font-semibold">Services - {deliveryLocation}</p>
                                     <span>$ {deliveryFee.toFixed(2)}</span>
                                 </div>
-                                <button onClick={handleRemoveDelivery} className="text-red-500 hover:underline"><TbBasketCancel className='h-5 w-5' /></button>
+                                <button onClick={handleRemoveDelivery} className="text-red-500  px-2"><TbBasketCancel className='h-5 w-5' /></button>
                             </li>
                         )}
                     </ul>
