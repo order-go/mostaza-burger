@@ -25,10 +25,15 @@ export interface ContactItem {
   link: string;
   icon: IconType;
 }
+export interface DeliveryOptions {
+  name: string;
+  fee: number;
+}
 const data: {
   categories: Category[];
   paydates: PayDates;
   contactData: ContactItem[];
+  deliveryOptions: DeliveryOptions[];
 } = {
   categories: [
     {
@@ -203,7 +208,7 @@ const data: {
     bank: "Venezuela",
     code: "0102",
     cedula: "24685881",
-    phone: "04124676968",
+    phone: "4124676968",
   },
   contactData: [
     {
@@ -216,6 +221,11 @@ const data: {
       link: "https://wa.me/4124676968",
       icon: FaWhatsapp,
     },
+  ],
+  deliveryOptions: [
+    { name: "Caña de Azucar", fee: 0 },
+    { name: "El Limon", fee: 2 },
+    { name: "San Vicente", fee: 3 },
   ],
 };
 
