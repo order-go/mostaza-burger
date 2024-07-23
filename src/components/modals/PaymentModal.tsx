@@ -32,6 +32,13 @@ const PaymentModal: React.FC<PaymentModalProps>=({total,onConfirm,onClose}: Paym
                     <h2 className="text-xl font-bold mb-4">Información de Pago</h2>
                     <IoMdCopy className='mb-4 w-6 h-6 cursor-pointer active:text-primary' onClick={handleCopy} />
                 </div>
+                <div className='flex flex-col justify-center items-center'>
+
+                    <strong className='underline'>ADVERTENCIA </strong>
+                    <p className='text-gray-300 text-sm justify-center  mb-2'>
+                        Asegúrate de consultar disponibilidad de los productos antes de realizar el pago.
+                    </p>
+                </div>
                 <InfoRow label="Banco" value={bank} />
                 <InfoRow label="Codigo" value={code} />
                 <InfoRow label="Cedula" value={cedula} />

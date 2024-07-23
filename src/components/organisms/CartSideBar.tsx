@@ -19,7 +19,6 @@ const CartSidebar=({isOpen,onClose}: {isOpen: boolean; onClose: () => void;}) =>
     const [comment,setComment]=useState("");
     const [deliveryFee,setDeliveryFee]=useState<number>(0);
     const [deliveryLocation,setDeliveryLocation]=useState<string>('');
-
     const [isDeliveryOptionOpen,setIsDeliveryOptionOpen]=useState(false);
 
     const total: number=cartItems.reduce(
@@ -29,7 +28,11 @@ const CartSidebar=({isOpen,onClose}: {isOpen: boolean; onClose: () => void;}) =>
 
     useEffect((): () => void => {
         const handleClickOutside: (event: MouseEvent) => void=(event: MouseEvent): void => {
-            if(sidebarRef.current&&!sidebarRef.current.contains(event.target as Node)) {
+            if(
+                sidebarRef.current&&
+                !sidebarRef.current.contains(event.target as Node)&&
+                !isDeliveryOptionOpen
+            ) {
                 onClose();
             }
         };
@@ -43,7 +46,7 @@ const CartSidebar=({isOpen,onClose}: {isOpen: boolean; onClose: () => void;}) =>
         return (): void => {
             document.removeEventListener('mousedown',handleClickOutside);
         };
-    },[isOpen,onClose]);
+    },[isOpen,onClose,isDeliveryOptionOpen]);
 
     const handlePaymentClick: () => void=(): void => {
         const orderSummary: string=cartItems.map(item => `${item.quantity} ${item.product.title}`).join(', ');
@@ -91,12 +94,12 @@ const CartSidebar=({isOpen,onClose}: {isOpen: boolean; onClose: () => void;}) =>
                     </ul>
                     <CartTotal total={total} />
                     <CartCommentsComponent comment={comment} setComment={setComment} />
-                    <DeliveryOptionModal isOpen={isDeliveryOptionOpen} onClose={() => setIsDeliveryOptionOpen(false)} setDeliveryFee={setDeliveryFee} setDeliveryLocation={setDeliveryLocation} />
                     <Button color="w-full text-lg" onClick={handlePaymentClick} label={'Generar pedido'} />
                 </div>
             </div>
             {isModalOpen&&<PaymentModal total={total} onConfirm={handleConfirm} onClose={(): void => setIsModalOpen(false)} />}
             {isNotificationVisible&&<NotificationComponent />}
+            {isDeliveryOptionOpen&&<DeliveryOptionModal isOpen={isDeliveryOptionOpen} onClose={(): void => setIsDeliveryOptionOpen(false)} setDeliveryFee={setDeliveryFee} setDeliveryLocation={setDeliveryLocation} />}
         </>
     );
 };
