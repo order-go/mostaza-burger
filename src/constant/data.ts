@@ -1,4 +1,7 @@
 import type { IconType } from "react-icons";
+import { TbTruckDelivery } from "react-icons/tb";
+import { MdOutlineDinnerDining } from "react-icons/md";
+
 import { FaInstagram, FaWhatsapp } from "react-icons/fa";
 
 export interface Product {
@@ -29,59 +32,112 @@ export interface DeliveryOptions {
   name: string;
   fee: number;
 }
+export interface ExtraInfo{
+  name:string
+  link: string;
+  icon: IconType;
+}
 const data: {
   categories: Category[];
   paydates: PayDates;
   contactData: ContactItem[];
   deliveryOptions: DeliveryOptions[];
+  extraInfo: ExtraInfo[];
 } = {
   categories: [
     {
       id: 1,
-      name: "Perros Calientes",
+      name: "confiteria",
       products: [
         {
           id: 1,
-          title: "Perro Normal",
-          price: 0.99,
+          title: "Cocosette",
+          price: 30.00,
           images: [
-            "/mostaza-burger/Perros/2PerrosAsquerocitos.jfif",
-            "/mostaza-burger/Perros/2PerrosCalientes.jfif",
-            "/mostaza-burger/Perros/PerroCaliente.jfif",
+            "/cafetin-ujap/confiteria/cocosette.jpeg",
           ],
           description:
-            "Clasico perro caliente disponible con: ensalada rayada, papas cabello de angel, salchicha alemana, salsas al gusto.",
+            "Galleta crujiente con relleno de crema de coco y sabor a coco.",
         },
         {
           id: 2,
-          title: "Perros Americanos",
-          price: 1.49,
-          images: ["/mostaza-burger/Perros/combodog.jpg"],
+          title: "Susy Maxi",
+          price: 40.00,
+          images: ["/cafetin-ujap/confiteria/susy.jpeg"],
           description:
-            "Perros americanos tradicionales salchica americana salsa blanca y salsa roja.",
+            "Son galletas tipo wafer (oblea) rellenas de crema de chocolate.",
+        },
+        {
+          id: 3,
+          title: "Palitos",
+          price: 35.00,
+          images: ["/cafetin-ujap/confiteria/palos.jpeg"],
+          description:
+            "Galletas de vainilla cubiertas de chocolate.",
+        }, 
+        {
+          id: 4,
+          title: "Doritos",
+          price: 47.00,
+          images: ["/cafetin-ujap/confiteria/doritos.jpeg"],
+          description:
+            "80 gramos de ricos nachos cubiertos de condimento de queso.",
+        },
+        {
+          id: 5,
+          title: "Ruffles",
+          price: 48.00,
+          images: ["/cafetin-ujap/confiteria/ruffles.jpeg"],
+          description:
+            "Ricas papas con sabor a cebolla, queso o ketchup.",
+        },
+        {
+          id: 6,
+          title: "TOM",
+          price: 45.00,
+          images: ["/cafetin-ujap/confiteria/tom.jpeg"],
+          description:
+            "Ruedas de platanos con sabor a ajo.",
+        },
+        {
+          id: 7,
+          title: "Trululu",
+          price: 30.00,
+          images: ["/cafetin-ujap/confiteria/trululu-fresas.jpeg",
+                  "/cafetin-ujap/confiteria/trululu-gomas.jpeg",
+                  "/cafetin-ujap/confiteria/trululu.jpeg"],
+          description:
+            "Deliciosas gomitas con distintos sabores y formas, perfectas para tu paladar.",
+        },
+        {
+          id: 8,
+          title: "Chestrees",
+          price: 45.00,
+          images: ["/cafetin-ujap/confiteria/chestrees.jpeg"],
+          description:
+            "Palitos de queso para compartir con tus amigos.",
         },
       ],
     },
     {
       id: 2,
-      name: "Hamburguesas",
+      name: "Empanadas",
       products: [
         {
           id: 1,
-          title: "Hamburguesa Normal",
-          price: 1.99,
+          title: "Empanadas",
+          price: 70.00,
           images: [
-            "/mostaza-burger/burger/RompeDietaBurger.jfif",
-            "/mostaza-burger/burger/RompeDietaBurger.jfif",
+            "/cafetin-ujap/empanadas/empanadas.jpeg",
           ],
           description:
-            "Hamburguesa clasica frescos ingredientes como: lechuga, tomate, cebolla, papas fritas, carne, salsas al gusto.",
+            "Deliciosas empanadas de carne mechada, pollo, jamon y queso, pabellon, cazón.",
         },
         {
           id: 2,
           title: "Burguer Comb",
           price: 4.99,
-          images: ["/mostaza-burger/burger/BurgerComb.jpg"],
+          images: ["/cafetin-ujap/burger/BurgerComb.jpg"],
           description:
             "Doble hamburguesa con racion de papas cuenta con Lechuga tomate cebolla pepinillos y carne de res.",
         },
@@ -89,7 +145,7 @@ const data: {
           id: 3,
           title: "Burger Papas",
           price: 1.99,
-          images: ["/mostaza-burger/burger/burgerpapas.jpg"],
+          images: ["/cafetin-ujap/burger/burgerpapas.jpg"],
           description:
             "Extraña combinacion entre el morbido queso fundido y la carne acompañada de deliciosas papas fritas perfecta para cualquier antojo.",
         },
@@ -97,7 +153,7 @@ const data: {
           id: 4,
           title: "Burger Express",
           price: 3.99,
-          images: ["/mostaza-burger/burger/rompehuesos.jpg"],
+          images: ["/cafetin-ujap/burger/rompehuesos.jpg"],
           description:
             "Hamburguesa express cuenta con doble carne racion de papas tomate lechuga aros de cebolla y todo el contorno extra en queso y salsas",
         },
@@ -112,8 +168,8 @@ const data: {
           title: "Pepito Carne",
           price: 7.99,
           images: [
-            "/mostaza-burger/pepito/PepitoFullEquipo.jfif",
-            "/mostaza-burger/pepito/PepitoPeligro.jfif",
+            "/cafetin-ujap/pepito/PepitoFullEquipo.jfif",
+            "/cafetin-ujap/pepito/PepitoPeligro.jfif",
           ],
           description:
             "Un tradicional pepito callejero de carne con: tomate, lechuga, papas cabello de angel, queso amarillo, cebolla, jamon, salsas al gusto.",
@@ -129,8 +185,8 @@ const data: {
           title: "Salchipapas",
           price: 4.99,
           images: [
-            "/mostaza-burger/salchipapa/salchipapas.jpg",
-            "/mostaza-burger/salchipapa/salchipapas2.jpg",
+            "/cafetin-ujap/salchipapa/salchipapas.jpg",
+            "/cafetin-ujap/salchipapa/salchipapas2.jpg",
           ],
           description:
             "Combo de salchicas picadas papas fritas combinadas con salsas al gusto, queso amarillo, jamon y tocineta.",
@@ -145,7 +201,7 @@ const data: {
           id: 1,
           title: "Combo 2 personas",
           price: 4.99,
-          images: ["/mostaza-burger/combos/combofamiliar.jpg"],
+          images: ["/cafetin-ujap/combos/combofamiliar.jpg"],
           description:
             "Combo para dos personas dos perros calientes, 2 racion de pollo y papas fritas mas 2 jugos naturales.",
         },
@@ -153,7 +209,7 @@ const data: {
           id: 2,
           title: "Papas fritas",
           price: 2.99,
-          images: ["/mostaza-burger/combos/papasfritas.jpg"],
+          images: ["/cafetin-ujap/combos/papasfritas.jpg"],
           description:
             "Racion extensa de papas fritas con salsa tartara para abrir el apetito.",
         },
@@ -165,39 +221,34 @@ const data: {
       products: [
         {
           id: 1,
-          title: "Coca Cola 1Lts",
-          price: 0.99,
+          title: "Pepsi",
+          price: 56.00,
           images: [
-            "/mostaza-burger/bebidas/CocaCola.jfif",
-            "/mostaza-burger/bebidas/Coca-Cola2.jfif",
-            "/mostaza-burger/bebidas/Coca-Cola3.jfif",
+            "/cafetin-ujap/bebidas/pepsi.jpeg",
           ],
           description:
-            "Bebida Coca-Cola de 1Lt perfecta para acompañar tus pedidos en pareja.",
+            "Bebida pepsi en lata perfecta para acompañar tu desayuno.",
         },
         {
           id: 2,
-          title: "Vaso Coca Cola",
-          price: 0.5,
-          images: [
-            "/mostaza-burger/bebidas/basoCoca.jpg",
-            "/mostaza-burger/bebidas/Coca-Cola2.jfif",
-          ],
+          title: "Jugos Naturales",
+          price: 40.00,
+          images: ["/cafetin-ujap/bebidas/jugo-natural.jpeg",],
           description:
-            "Bebida Coca-Cola  perfecta para acompañar tus pedidos individuales.",
+            "Jugos naturales parchita, mango, durazno, patilla, fresa.",
         },
         {
           id: 3,
-          title: "Batido de cambur",
+          title: "",
           price: 0.99,
-          images: ["/mostaza-burger/bebidas/batidocambur.jpg"],
+          images: ["/cafetin-ujap/bebidas/batidocambur.jpg"],
           description: "Delicioso batido de cambur muy nutritivo y natural.",
         },
         {
           id: 4,
           title: "Batido de naranja",
           price: 0.99,
-          images: ["/mostaza-burger/bebidas/batidosabroso.jpg"],
+          images: ["/cafetin-ujap/bebidas/batidosabroso.jpg"],
           description:
             "Jugo de naranja para los amantes del citrico, altos valores de vitamina C.",
         },
@@ -210,14 +261,26 @@ const data: {
     cedula: "24685881",
     phone: "4124676968",
   },
+  extraInfo:[
+    {
+      name: "Almuerzos",
+      link: "https://www.instagram.com/cafetinujap",
+      icon: MdOutlineDinnerDining,
+    },
+    {
+      name:"Encargos",
+      link: "https://wa.me/4124676968",
+      icon: TbTruckDelivery,
+    }
+  ],
   contactData: [
     {
-      name: "Mostaza Burger",
-      link: "https://www.instagram.com/mostazaburger",
+      name: "Cafetín UJAP",
+      link: "https://www.instagram.com/cafetinujap",
       icon: FaInstagram,
     },
     {
-      name: "WhatsApp Burger",
+      name: "WhatsApp Cafetín",
       link: "https://wa.me/4124676968",
       icon: FaWhatsapp,
     },

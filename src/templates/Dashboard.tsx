@@ -42,11 +42,11 @@ const Dashboard = () => {
 
   return (
     <section className='flex bg-black flex-col justify-center items-center pt-20 '>
-      <div className='flex flex-row justify-between items-center gap-8'>
+      <div className='flex flex-row justify-between items-center gap-8 w-full px-4 md:w-full md:px-16 lg:w-full lg:px-28'>
         <InputFilter onSearch={handleSearch} />
         <FilterCategories onFilter={setFilteredCategories} />
       </div>
-      <div className='bg-black w-full flex flex-col items-center justify-center'>
+      <div className='bg-black w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5'>
         {displayedCategories.map(
           (category: { products: Product[]; id: number; name: string }) => (
             <Menu

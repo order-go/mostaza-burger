@@ -48,7 +48,7 @@ const ImageProduct = ({ images, alt }: { images: string[]; alt: string }) => {
               onClick={closeModal}
               className='absolute top-0 right-0  p-1 rounded-full'
             >
-              <MdOutlineCancel className='h-8 w-8 text-red' />
+              <MdOutlineCancel className='h-8 w-8 text-fourth' />
             </button>
             <img
               src={selectedImage ?? ''}

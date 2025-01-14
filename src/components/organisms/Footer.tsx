@@ -2,7 +2,7 @@ import data,{type ContactItem} from '../../constant/data';
 
 const Footer=() => {
   return (
-    <footer className='bg-black text-white py-4 border-t-2 border-brown shadow-lg'>
+    <footer className='bg-black text-white py-4 border-t-2 border-fourth shadow-lg'>
       <div className='container mx-auto px-4'>
         <div className='flex flex-col items-center text-center space-y-4'>
           <div className='text-yellow-500'>
@@ -20,7 +20,7 @@ const Footer=() => {
               {data?.contactData.map((item: ContactItem,index: number) => (
                 <li
                   key={index}
-                  className='p-2 flex text-yellow active:text-red items-center gap-4'
+                  className='p-2 flex text-tertiary active:text-red items-center gap-4'
                 >
                   {item.icon&&<item.icon className='mr-2 h-8 w-8' />}
                 </li>

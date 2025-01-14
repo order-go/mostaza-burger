@@ -1,5 +1,5 @@
 const Description=({text}: {text: string}) => {
-    return <p className=" font-light text-gray-300 text-justify text-sm  mt-2">{text}
+    return <p className=" text-gray-300 text-justify text-md font-semibold mt-2">{text}
     </p>;
 }
 

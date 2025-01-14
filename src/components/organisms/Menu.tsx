@@ -7,7 +7,7 @@ const Menu=({products,addToCart}: {products: Product[],addToCart: (product: Prod
         <>
             {products.map((product: Product) => (
                 <div
-                    className='my-8' key={product.id}
+                    className='my-8 mx-auto' key={product.id}
                 >
                     <ProductDetail
                         product={product}
